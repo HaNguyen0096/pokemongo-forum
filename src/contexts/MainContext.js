@@ -26,7 +26,6 @@ export class MainProvider extends Component {
   }
 
   setThreadList = threadList => {
-    console.log(threadList)
     this.setState({threadList})
   }
 

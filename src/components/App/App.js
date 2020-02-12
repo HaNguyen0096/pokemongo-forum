@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import MainPage from '../../routes/MainPage/MainPage'
-//import TopicPage from '../../routes/TopicPage/TopicPage'
+import TopicPage from '../../routes/TopicPage/TopicPage'
 //import ThreadPage from '../../routes/ThreadPage/ThreadPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
@@ -40,11 +40,11 @@ class App extends Component {
               path={'/'}
               component={MainPage}
             />
-          {/*  <Route
+            <Route
               path={'/:topicName'}
               component={TopicPage}
             />
-            <Route
+          {/*}  <Route
               path={'/Thread/:ThreadId'}
               component={ThreadPage}
           />*/}

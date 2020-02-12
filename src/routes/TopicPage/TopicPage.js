@@ -1,17 +1,43 @@
 import React, { Component } from 'react'
+import MainContext from '../../contexts/MainContext'
+import ApiService from '../../services/api-service'
+import {Section} from '../../components/Utils/Utils'
+import ThreadListMain from '../../components/ThreadListMain/ThreadListMain'
+import {getThreadsForTopic} from '../../components/Utils/Utils'
 
-class TopicPage extends Component {
+
+export default class TopicPage extends Component {
+  static defaultProps = {
+    match: {
+      params: {}
+    }
+  }
+
+  static contextType = MainContext
+
+  componentDidMount() {
+    ApiService.getThreads()
+      .then(this.context.setThreadList)
+      .catch(this.context.setError)
+  }
+
+  renderThreadList(){
+    const { threadList = [] } = this.context
+    const topicName = this.props.match.params.topicName
+    const ThreadForTopic = getThreadsForTopic(threadList, topicName)
+    return ThreadForTopic.map(thread =>
+      <ThreadListMain 
+        key={thread.thread_id}
+        thread={thread}  
+      />
+      )
+  }
   render() {
-   // const topic = TOPICS.find(t =>
-     // t.topic_id === props.match.params.topicId
-    //)
-    //const topicList = this.props.topics.map((topic, key)=><ListTopic {...topic} key={key} />);
     return (
-      <div className="topic">
-        <h2>haha</h2>
-      </div>
+      <Section>
+        <h2>Threads</h2>
+        {this.renderThreadList()}
+      </Section>
     );
   }
 }
-
-export default TopicPage;

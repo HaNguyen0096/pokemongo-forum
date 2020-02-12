@@ -4,6 +4,7 @@ import ApiService from '../../services/api-service'
 import {Section} from '../../components/Utils/Utils'
 import ThreadListMain from '../../components/ThreadListMain/ThreadListMain'
 import TopicListNav from '../../components/TopicListNav/TopicListNav'
+import {countThreadsForTopic} from '../../components/Utils/Utils'
 
 
 
@@ -23,12 +24,12 @@ export default class MainPage extends Component{
   }
 
   renderTopicsNav(){
-    const { topicList = [] } = this.context
-    
+    const { topicList = [], threadList = [] } = this.context
     return topicList.map(topic =>
       <TopicListNav 
         key={topic.topic_name}
-        topic={topic}  
+        topic={topic}
+        countThread = {countThreadsForTopic(threadList, topic.topic_name)}
       />
       )
   }
@@ -53,15 +54,7 @@ export default class MainPage extends Component{
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderTopicsNav()}
-          {this.renderThreadList()}
-      </Section>
-      {/*
-      <Section>
-        <h2>Threads</h2>
-        {error
-          ? <p className='red'>There was an error, try again</p>
-          : this.renderThreadList()}
-        </Section>*/}
+      </Section>      
       </div>
     )
   }

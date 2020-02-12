@@ -34,10 +34,10 @@ export function Section({ className, list, ...props }) {
 export const getThreadsForTopic = (threads=[], topicName) => (
   (!topicName)
     ? threads
-    : threads.filter(thread => thread.topic_name == topicName)
+    : threads.filter(thread => thread.topic_name === topicName)
 )
 
-//export const countThreadsForTopic = (threads=[], topicName) => (
-//  threads.filter(thread => thread.topic_name === topicName).length
-//)
+export const countThreadsForTopic = (threads=[], topicName) => 
+  threads.filter(thread => thread.topic_name === topicName).length
+
 
