@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+.headerTop {
+    display: block;
+}
+
+img{
+    background-size: cover;
+    width: 100%;
+}
+
+.loginNav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #aaa;
+    font-size: 30px;
+}
+
+.title{
+    display: fix;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.login-button{
+    margin-right: 10px;
+}
+
+.TopicLists{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ccc;
+    font-size: 30px;
+    list-style: none;
+}
