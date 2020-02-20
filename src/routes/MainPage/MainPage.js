@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import MainContext from '../../contexts/MainContext'
+import TopicListContext from '../../contexts/TopicListContext'
 import ApiService from '../../services/api-service'
 import {Section} from '../../components/Utils/Utils'
-import ThreadListMain from '../../components/ThreadListMain/ThreadListMain'
 import TopicListNav from '../../components/TopicListNav/TopicListNav'
 import {countThreadsForTopic} from '../../components/Utils/Utils'
 
@@ -10,7 +9,7 @@ import {countThreadsForTopic} from '../../components/Utils/Utils'
 
 export default class MainPage extends Component{
 
-  static contextType = MainContext
+  static contextType = TopicListContext
 
   componentDidMount() {
     this.context.clearError()
@@ -18,29 +17,19 @@ export default class MainPage extends Component{
       .then(this.context.setTopicList)
       .catch(this.context.setError)
 
-    ApiService.getThreads()
+    ApiService.getThread()
       .then(this.context.setThreadList)
       .catch(this.context.setError)
   }
 
   renderTopicsNav(){
     const { topicList = [], threadList = [] } = this.context
+    //console.log(this.context)
     return topicList.map(topic =>
       <TopicListNav 
-        key={topic.topic_name}
+        key={topic.id}
         topic={topic}
-        countThread = {countThreadsForTopic(threadList, topic.topic_name)}
-      />
-      )
-  }
-
-  renderThreadList(){
-    const { threadList = [] } = this.context
-    console.log(threadList)
-    return threadList.map(thread =>
-      <ThreadListMain 
-        key={thread.thread_id}
-        thread={thread}  
+        countThread = {countThreadsForTopic(threadList, topic.id)}
       />
       )
   }

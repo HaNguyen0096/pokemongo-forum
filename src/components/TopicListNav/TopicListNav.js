@@ -10,7 +10,7 @@ export default class TopicListNav extends Component{
       <div className='TopicNav'>
       <nav role="navigation">
         <ul className='TopicNav_List'>
-          <Link to={`/${topic.topic_name}`} className='TopicListName'>
+          <Link to={`/topic/${topic.id}`} className='TopicListName'>
             <h2 className='TopicListItem__heading'>{topic.topic_name}</h2>
           </Link>
           <p>{topic.topic_content}</p>

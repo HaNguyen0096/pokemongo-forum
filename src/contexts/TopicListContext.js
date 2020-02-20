@@ -1,23 +1,21 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-const MainContext = React.createContext({
-  threadList: [],
+const TopicListContext = React.createContext({
   topicList: [],
+  threadList: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setTopicList: () => {},
-  //addThread: () => {},
-  //deleteThread: () => {},
+  setThreadList: () => {},
 })
 
-export default MainContext
+export default TopicListContext
 
-export class MainProvider extends Component {
-
+export class TopicListProvider extends Component {
   state = {
-    threadList : [],
-    topicList : [],
+    topicList: [],
+    threadList: [],
     error: null,
   };
 
@@ -38,10 +36,10 @@ export class MainProvider extends Component {
     this.setState({ error: null })
   }
 
-  render(){
+  render() {
     const value = {
-      threadList: this.state.threadList,
       topicList: this.state.topicList,
+      threadList: this.state.threadList,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
@@ -49,9 +47,9 @@ export class MainProvider extends Component {
       setThreadList: this.setThreadList,
     }
     return (
-      <MainContext.Provider value={value}>
+      <TopicListContext.Provider value={value}>
         {this.props.children}
-      </MainContext.Provider>
+      </TopicListContext.Provider>
     )
   }
 }
