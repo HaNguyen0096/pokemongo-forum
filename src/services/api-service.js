@@ -62,6 +62,18 @@ const ApiService = {
       )
   },
 
+  getComment() {
+    return fetch(`${config.API_ENDPOINT}/comments`, {
+      headers: {
+      },
+    })
+      .then(commentRes =>
+        (!commentRes.ok)
+          ? commentRes.json().then(e => Promise.reject(e))
+          : commentRes.json()
+      )
+  },
+
   getThread() {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       headers: {

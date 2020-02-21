@@ -10,6 +10,9 @@ const ThreadContext = React.createContext({
   clearThread: () => {},
   setComments: () => {},
   addComment: () => {},
+  deleteComment: (commentId) => {},
+  deleteThread: (threadId) => {},
+
 })
 
 export default ThreadContext
@@ -34,13 +37,13 @@ export class ThreadProvider extends Component {
     this.setState({ thread })
   }
 
-  setComments = comments => {
-    this.setState({ comments })
-  }
-
   clearThread = () => {
     this.setThread(null)
     this.setComments([])
+  }
+
+  setComments = comments => {
+    this.setState({ comments })
   }
 
   addComment = comment => {
@@ -61,6 +64,8 @@ export class ThreadProvider extends Component {
       setComments: this.setComments,
       clearThread: this.clearThread,
       addComment: this.addComment,
+      deleteComment: this.deleteComment,
+      deleteThread: this.deleteThread,
     }
     return (
       <ThreadContext.Provider value={value}>

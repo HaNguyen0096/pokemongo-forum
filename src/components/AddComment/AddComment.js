@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
-import MainContext from '../../contexts/TopicContext'
+import ThreadContext from '../../contexts/ThreadContext'
 import ApiService from '../../services/api-service'
 import { Button, Textarea } from '../Utils/Utils'
 
 export default class AddComment extends Component {
   
-  static contextType = MainContext
+  static contextType = ThreadContext
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { thread } = this.props
+    const { thread } = this.context
     console.log(thread)
     const { text } = ev.target
 
-    ApiService.postComment(thread.thread_id, text.value)
+    ApiService.postComment(thread.id, text.value)
       .then(this.context.addComment)
-      .then(() => {
-        text.value = ''
-      })
       .catch(this.context.setError)
   }
 

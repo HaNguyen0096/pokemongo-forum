@@ -20,9 +20,9 @@ export default class TopicPage extends Component {
       const {threadId} = this.props.match.params
       console.log(threadId)
       this.context.clearError()
-    //ApiService.getThisThreads(threadId)
-    //    .then(this.context.setThread)
-    //    .catch(this.context.setError)
+    ApiService.getThisThread(threadId)
+        .then(this.context.setThread)
+        .catch(this.context.setError)
     ApiService.getComments(threadId)
       .then(this.context.setComments)
       .catch(this.context.setError)
@@ -30,9 +30,7 @@ export default class TopicPage extends Component {
 
 
   renderComments(){
-    //console.log(this.context)
     const { comments = []} = this.context
-    console.log(this.context)
     return comments.map(comment =>
       <CommentList 
         key = {comment.id}
@@ -41,12 +39,20 @@ export default class TopicPage extends Component {
       )
   }
   render() {
+    const { thread } = this.context
     return (
-      <Section>
-        <h2>Comments</h2>
+      <div className='Thread_Page'>
+        <Section>
+        <h2>{thread && thread.thread_title}</h2>
+        <h4>{thread && thread.thread_content}</h4>
+        <DeleteThread thread={thread}/>
+      </Section>
+        <Section>
+        <p>Comments</p>
         {this.renderComments()}
         <AddComment />
       </Section>
+      </div>
     );
   }
 }

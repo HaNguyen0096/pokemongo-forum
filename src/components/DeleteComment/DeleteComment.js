@@ -11,10 +11,10 @@ export default class DeleteThread extends React.Component {
 
   handleClickDelete = e => {
     e.preventDefault()
-    const { thread } =this.props
+    const { comment } =this.props
     console.log(this.props)
-    const threadId = thread.id
-    fetch(`${config.API_ENDPOINT}/threads/${threadId}`, {
+    const commentId = comment.id
+    fetch(`${config.API_ENDPOINT}/comments/${commentId}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
@@ -23,11 +23,11 @@ export default class DeleteThread extends React.Component {
       .then(res => {
         if (!res.ok)
           return res.json().then(e => Promise.reject(e))
-        window.history.back();
+        window.location.reload();
       })
       .then(() => {
-        this.context.deleteThread(threadId)
-        this.props.onDeleteThread(threadId)
+        this.context.deleteComment(commentId)
+        this.props.onDeleteComment(commentId)
       })
       .catch(error => {
         console.error({ error })
@@ -36,7 +36,7 @@ export default class DeleteThread extends React.Component {
 
   render() {
     return (
-      <div className='Delete_Thread'>
+      <div className='Delete_Comment'>
         <button
           className='Delete_Button'
           type='button'
@@ -44,7 +44,7 @@ export default class DeleteThread extends React.Component {
         >
          <FontAwesomeIcon icon='trash-alt'/>
          {' '}
-          Delete Thread
+          remove
         </button>
       </div>
     )

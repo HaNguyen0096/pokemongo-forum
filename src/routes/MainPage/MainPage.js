@@ -24,7 +24,6 @@ export default class MainPage extends Component{
 
   renderTopicsNav(){
     const { topicList = [], threadList = [] } = this.context
-    //console.log(this.context)
     return topicList.map(topic =>
       <TopicListNav 
         key={topic.id}
@@ -39,7 +38,9 @@ export default class MainPage extends Component{
     return (
       <div className='MainPage'>
       <Section>
-        <h2>Topic</h2>
+        <div className='Welcom_Message'> 
+        <p>Welcome to the forum, feel free to ask any question!</p>
+        </div>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderTopicsNav()}

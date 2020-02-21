@@ -16,10 +16,6 @@ export default class AddThread extends Component {
 
     ApiService.postThread(topic.id, title.value, content.value)
       .then(this.context.addThread)
-      // .then(() => {
-      //   title.value = '',
-      //   content.value = ''
-      // })
       .catch(this.context.setError)
   }
 
