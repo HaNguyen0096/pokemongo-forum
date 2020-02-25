@@ -10,8 +10,8 @@ const ThreadContext = React.createContext({
   clearThread: () => {},
   setComments: () => {},
   addComment: () => {},
-  deleteComment: (commentId) => {},
-  deleteThread: (threadId) => {},
+  deleteComment: () => {},
+  deleteThread: () => {},
 
 })
 

@@ -10,7 +10,6 @@ export default class AddComment extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { thread } = this.context
-    console.log(thread)
     const { text } = ev.target
 
     ApiService.postComment(thread.id, text.value)

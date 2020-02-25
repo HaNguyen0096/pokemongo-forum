@@ -95,7 +95,6 @@ const ApiService = {
       body: JSON.stringify({
         thread_id: threadId,
         content: text,
-        comment_id: 30,
       }),
     })
     .then(res =>
@@ -115,7 +114,6 @@ const ApiService = {
         topic_id: topicId,
         thread_title: title,
         thread_content: content,
-        user_id: 3,
       }),
     })
     .then(res =>

@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "hanguyen-pokemongo-forum",
+  "name": "pokemono-forum",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}
