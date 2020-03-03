@@ -4,6 +4,7 @@ import ApiService from '../../services/api-service'
 import {Section} from '../../components/Utils/Utils'
 import TopicListNav from '../../components/TopicListNav/TopicListNav'
 import {countThreadsForTopic} from '../../components/Utils/Utils'
+import './MainPage.css'
 
 
 
@@ -38,7 +39,7 @@ export default class MainPage extends Component{
     return (
       <div className='MainPage'>
       <Section>
-        <div className='Welcom_Message'> 
+        <div className='Welcome_Message'> 
         <p>Welcome to the forum, feel free to ask any question!</p>
         </div>
         {error

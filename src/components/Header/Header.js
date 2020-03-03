@@ -11,7 +11,7 @@ export default class Header extends Component{
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
-        <Link
+        <Link style={{ textDecoration: 'none' }}
           onClick={this.handleLogoutClick}
           to='/'>
           Logout
@@ -23,12 +23,12 @@ export default class Header extends Component{
   renderLoginLink() {
     return (
       <div className='Header__not-logged-in'>
-        <Link
+        <Link className='register-button'
           to='/register'>
           Register
         </Link>
-        -
-        <Link
+        {' - '}
+        <Link className='login-button'
           to='/login'>
           Log in
         </Link>
@@ -44,9 +44,11 @@ export default class Header extends Component{
           <img src={banner} className="banner" alt="Pokemon GO forum" />
           <div className="loginNav">
             <div className="title">Pokemon GO Forum</div>
+            <div className='login-button'>
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
+            </div>
           </div>
         </div>
         <nav className='navBar'>

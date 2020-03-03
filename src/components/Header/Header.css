@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.header{
+    margin: 0;
+    padding: 0;
+}
+
 .headerTop {
     display: block;
 }
@@ -9,14 +14,35 @@
 img{
     background-size: cover;
     width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.register-button{
+    text-decoration: none; 
+}
+
+.register-button:hover{
+    color: rgb(4,4,148);
+}
+
+.login-button{
+    text-decoration: none;
+}
+
+.login-button:hover{
+    color: rgb(4,4,148);
 }
 
 .loginNav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #aaa;
-    font-size: 30px;
+    background-color: rgb(32,207,116);
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
 }
 
 .title{

@@ -1,0 +1,41 @@
+.topicNav{
+  display: block;
+  padding: 0;
+}
+
+.topicNameBar{
+
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+.topicNames{
+  text-decoration: none;
+}
+
+.topicNames:link{
+  color: black;
+}
+
+.topicNames:visited{
+  color: black;
+}
+
+.topicNames:hover{
+  color: rgb(23,156,106);
+}
+
+.countThread{
+  color: rgb(70, 70, 70);
+}
+
+hr{
+  border: 0;
+  height: 1px;
+  background-color: rgb(23,156,106);
+  width: 90%;
+}
+
+

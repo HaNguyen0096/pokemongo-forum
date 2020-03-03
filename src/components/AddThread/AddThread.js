@@ -11,7 +11,6 @@ export default class AddThread extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { topic } = this.context
-    console.log(topic)
     const { title, content } = ev.target
 
     ApiService.postThread(topic.id, title.value, content.value)
@@ -23,10 +22,10 @@ export default class AddThread extends Component {
     return (
       <form
         className='Thread'
-        onSubmit={this.handleSubmit}
+        onSubmit= {this.handleSubmit}
       >
         <div className='addThread'>
-          <div className='title'>
+          <div className='addTitle'>
           <Textarea
             required
             aria-label='Thread Title...'
@@ -37,7 +36,7 @@ export default class AddThread extends Component {
             placeholder='Thread Title..'>
           </Textarea>
           </div>
-          <div className='content'>
+          <div className='addContent'>
           <Textarea
             required
             aria-label='Type your thread...'
@@ -50,7 +49,7 @@ export default class AddThread extends Component {
           </div>
         </div>
 
-        <Button type='submit'>
+        <Button type='submit' className='postThreadBtn'>
           Post Thread
         </Button>
       </form>

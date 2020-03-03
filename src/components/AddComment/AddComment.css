@@ -1,18 +1,9 @@
-*{
-  box-sizing: border-box;
-}
 
-.addTitle{
+.addComment{
   padding: 10px;
-  margin-left: -10px;
 }
 
-.addContent{
-  padding: 10px;
-  margin-left: -10px;
-}
-
-.postThreadBtn{
+.postCommentBtn{
   background-color: rgb(23,156,106);
   color: white;
   padding: 16px 20px;

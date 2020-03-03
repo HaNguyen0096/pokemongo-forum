@@ -1,0 +1,51 @@
+.threadList{
+  display: block;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.threadBar{
+
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  vertical-align: bottom;
+  margin-bottom: 10px;
+}
+
+.threadTitle{
+  text-decoration: none;
+}
+
+.threadTitle:link{
+  color: black;
+}
+
+.threadTitle:visited{
+  color: black;
+}
+
+.threadTitle:hover{
+  color: rgb(23,156,106);
+}
+
+.threadContent{
+  margin-bottom: 10px;
+}
+
+.threadTime{
+  color: rgb(113,113,113)
+}
+
+.CountLike{
+  color: rgb(113,113,113);
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+}
+
+
+
+
+
+

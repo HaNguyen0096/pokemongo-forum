@@ -1,0 +1,45 @@
+.commentList{
+  display: block;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.threadBar{
+
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  vertical-align: bottom;
+  margin-bottom: 10px;
+}
+
+.threadTitle{
+  text-decoration: none;
+}
+
+
+.threadContent{
+  margin-bottom: 10px;
+}
+
+.commentTime{
+  color: rgb(113,113,113);
+  margin-bottom: 10px;
+}
+
+.cmthr{
+  width: 100%
+}
+
+.dltComment{
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+

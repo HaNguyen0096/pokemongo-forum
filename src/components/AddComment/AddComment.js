@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ThreadContext from '../../contexts/ThreadContext'
 import ApiService from '../../services/api-service'
 import { Button, Textarea } from '../Utils/Utils'
+import './AddComment.css'
 
 export default class AddComment extends Component {
   
@@ -23,7 +24,7 @@ export default class AddComment extends Component {
         className='Comment'
         onSubmit={this.handleSubmit}
       >
-        <div className='text'>
+        <div className='addComment'>
           <Textarea
             required
             aria-label='Type a comment...'
@@ -35,7 +36,7 @@ export default class AddComment extends Component {
           </Textarea>
         </div>
 
-        <Button type='submit'>
+        <Button type='submit' className='postCommentBtn'>
           Post comment
         </Button>
       </form>

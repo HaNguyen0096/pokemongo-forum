@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../Utils/Utils'
+import './LoginForm.css'
 
 export default class LoginForm extends Component{
   static defaultProps = {
@@ -23,7 +24,7 @@ export default class LoginForm extends Component{
   render(){
     const { error } = this.state
     return (
-      <form className='LoginForm' onSubmit={this.handleSubmitBasicAuth}>
+      <form className='loginForm' onSubmit={this.handleSubmitBasicAuth}>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
@@ -34,6 +35,7 @@ export default class LoginForm extends Component{
           <Input
             required
             name='user_name'
+            type='text'
             id='LoginForm__user_name'>
           </Input>
         </div>
@@ -48,7 +50,7 @@ export default class LoginForm extends Component{
             id='LoginForm__password'>
           </Input>
         </div>
-        <Button type='submit'>
+        <Button type='submit' className='loginbtn'>
           Login
         </Button>
       </form>

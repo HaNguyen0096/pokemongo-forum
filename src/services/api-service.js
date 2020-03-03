@@ -4,8 +4,10 @@ const ApiService = {
 
   getTopics() {
     return fetch(`${config.API_ENDPOINT}/topics`, {
+      // mode: 'no-cors',
       headers: {
       },
+      
     })
       .then(topicsRes =>
         (!topicsRes.ok)
@@ -78,6 +80,7 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       headers: {
       },
+      // mode: 'no-cors',
     })
       .then(threadsRes =>
         (!threadsRes.ok)
@@ -112,6 +115,24 @@ const ApiService = {
       },
       body: JSON.stringify({
         topic_id: topicId,
+        thread_title: title,
+        thread_content: content,
+      }),
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+  },
+
+  updateThread(threadId, title, content) {
+    return fetch(`${config.API_ENDPOINT}/threads/${threadId}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
         thread_title: title,
         thread_content: content,
       }),

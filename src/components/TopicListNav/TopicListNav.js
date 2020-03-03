@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './TopicList.css'
 
 export default class TopicListNav extends Component{
 
@@ -7,16 +9,20 @@ export default class TopicListNav extends Component{
     const { topic } = this.props
     let count = this.props.countThread
     return (
-      <div className='TopicNav'>
+      <div className='topicNav'>
       <nav role="navigation">
-        <ul className='TopicNav_List'>
-          <Link to={`/topic/${topic.id}`} className='TopicListName'>
-            <h2 className='TopicListItem__heading'>{topic.topic_name}</h2>
-          </Link>
-          <p>{topic.topic_content}</p>
-          <p>Threads: {count}</p>
+        <ul className='topicNav_List'>
+          <div className='topicNameBar'>            
+            <Link to={`/topic/${topic.id}`} className='topicNames'>
+              <FontAwesomeIcon icon='folder'/> {topic.topic_name}                       
+            </Link>
+          </div>
+          <p className='topicContent'>{topic.topic_content}</p>
+          <p className='countThread'>Threads: {count}</p>
+          
         </ul>
       </nav>
+      <hr />
       </div>
     )
   }

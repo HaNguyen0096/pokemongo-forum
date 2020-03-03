@@ -7,8 +7,6 @@ import ThreadPage from '../../routes/ThreadPage/ThreadPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-//import ThreadContext from '../../contexts/ThreadContext'
-//import config from '../../config'
 
 //import Footer from '../Footer/Footer';
 import './App.css'

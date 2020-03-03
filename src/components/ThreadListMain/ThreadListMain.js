@@ -1,32 +1,26 @@
 import React, { Component} from 'react'
 import { Link } from 'react-router-dom'
-import { format } from 'date-fns'
-import { moment } from 'moment-timezone'
+import  moment  from 'moment-timezone'
+import './ThreadListMain.css'
 
 export default class ThreadListMain extends Component{
   render() {
     const { thread, topic, countComments } = this.props
-    // const time = moment(thread.modified).tz('America/New_York')
-    // const dec = moment("2014-12-01T12:00:00Z")
-    // console.log(moment(thread.modified))
+    const time = moment(thread.modified).tz('America/New_York').format('MMMM Do YYYY, h:mm:ss a')
     return (
-      <div className='ThreadList'>
-        <Link to={`/topic/${topic.id}/${thread.id}`} className='ThreadListItem'>
-        <div className='ThreadListItem__title'>
-            <h2>{thread.thread_title}</h2>
+      <div className='threadList'>
+        <div className='threadBar'>
+          <Link to={`/topic/${topic.id}/${thread.id}`} className='threadTitle'>
+            {thread.thread_title}
+          </Link>
+        </div>       
+        <div className='threadContent'>{thread.thread_content}</div>
+        <div className='threadTime'>{time}</div>
+        <div className='CountLike'>
+          <p>Comments: {countComments}</p>
+          {/* <button className='likesBtn'> Likes: {thread.likes}</button> */}
         </div>
-        </Link>
-        {/* <div className='Note__dates'>
-          <div className='Note__dates-modified'>
-            Modified:
-            {' '}
-            <span className='Date'>
-              {format(time, 'Do MMM YYYY')}
-            </span>
-          </div>
-        </div> */}
-        <p>{thread.thread_content}</p>
-        <p>Comments: {countComments}</p>
+        <hr />
       </div>      
     )
   }

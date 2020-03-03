@@ -5,6 +5,7 @@ import {Section} from '../../components/Utils/Utils'
 import ThreadListMain from '../../components/ThreadListMain/ThreadListMain'
 import AddThread from '../../components/AddThread/AddThread'
 import {countCommentsForThread} from '../../components/Utils/Utils'
+import './TopicPage.css'
 
 export default class TopicPage extends Component {
   static defaultProps = {
@@ -48,14 +49,18 @@ export default class TopicPage extends Component {
   render() {
     const {topic} = this.context
     return (
-      <div className='TopicPage'>
-        <Section>
-          <h2>{topic && topic.topic_name}</h2>
-          <h4>{topic && topic.topic_content}</h4>
+      <div className='topicPage'>
+        <Section className='topicDetail'>
+          <div className='topicName'>
+            <h3>{topic && topic.topic_name}</h3>
+          </div>
+          <div className='topicContent'>
+            <p>{topic && topic.topic_content}</p>
+          </div>
         </Section>
         <Section>        
-        {this.renderThreadList()} 
-        <h1>Add New Thread</h1>
+          {this.renderThreadList()} 
+          <div className='addThread'> Add New Thread</div>
           <AddThread />
         </Section>
       </div>

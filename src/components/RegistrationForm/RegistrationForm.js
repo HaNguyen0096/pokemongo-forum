@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
+import './RegistrationForm.css'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -26,18 +27,18 @@ export default class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <form
-        className='RegistrationForm'
+        className='registrationForm'
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
-        <div className='full_name'>
+        <div className='fullName'>
           <label htmlFor='RegistrationForm__full_name'>
             Full name <Required />
           </label>
           <Input
-            name='full_name'
+            name='fullName'
             type='text'
             required
             id='RegistrationForm__full_name'>
@@ -76,7 +77,7 @@ export default class RegistrationForm extends Component {
             id='RegistrationForm__nick_name'>
           </Input>
         </div>
-        <Button type='submit'>
+        <Button type='submit' class='registerbtn'>
           Register
         </Button>
       </form>

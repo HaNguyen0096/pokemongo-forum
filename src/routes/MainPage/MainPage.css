@@ -1,0 +1,12 @@
+.MainPage{
+  margin-top: 1px;
+}
+
+.Welcome_Message{
+  color: rgb(7,81,12);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid white;
+}
+
