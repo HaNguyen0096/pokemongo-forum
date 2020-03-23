@@ -17,7 +17,7 @@ export default class TopicListNav extends Component{
               <FontAwesomeIcon icon='folder'/> {topic.topic_name}                       
             </Link>
           </div>
-          <p className='topicContent'>{topic.topic_content}</p>
+          <p className='topicDescription'>{topic.topic_content}</p>
           <p className='countThread'>Threads: {count}</p>
           
         </ul>

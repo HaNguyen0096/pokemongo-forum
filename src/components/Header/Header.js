@@ -44,11 +44,11 @@ export default class Header extends Component{
           <img src={banner} className="banner" alt="Pokemon GO forum" />
           <div className="loginNav">
             <div className="title">Pokemon GO Forum</div>
-            <div className='login-button'>
+            {/* <div className='login-button'>
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
-            </div>
+            </div> */}
           </div>
         </div>
         <nav className='navBar'>

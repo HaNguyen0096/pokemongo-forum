@@ -6,14 +6,15 @@
 .topicNameBar{
 
   display: inline-block;
-  position: relative;
   font-weight: bold;
   vertical-align: bottom;
 }
 
+
 .topicNames{
   text-decoration: none;
 }
+
 
 .topicNames:link{
   color: black;
