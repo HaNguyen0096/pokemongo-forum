@@ -38,6 +38,11 @@ export default class TopicPage extends Component {
       />
       )
   }
+
+  goBack = () => {
+    this.props.history.goBack();
+  }
+
   render() {
     const { thread } = this.context
     return (
@@ -59,6 +64,7 @@ export default class TopicPage extends Component {
           {this.renderComments()}
           <AddComment />
         </Section>
+        <button className='backBtn' onClick={this.goBack}>Back</button>
       </div>
     );
   }

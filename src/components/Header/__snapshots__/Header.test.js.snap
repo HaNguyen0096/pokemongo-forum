@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders Header by default 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="headerTop"
+  >
+    <img
+      alt="Pokemon GO forum"
+      className="banner"
+      src="go-banner.png"
+    />
+    <div
+      className="loginNav"
+    >
+      <div
+        className="title"
+      >
+        Pokemon GO Forum
+      </div>
+    </div>
+  </div>
+  <nav
+    className="navBar"
+  />
+</div>
+`;
+
+exports[`Header component renders the UI for Header as expected 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="headerTop"
+  >
+    <img
+      alt="Pokemon GO forum"
+      className="banner"
+      src="go-banner.png"
+    />
+    <div
+      className="loginNav"
+    >
+      <div
+        className="title"
+      >
+        Pokemon GO Forum
+      </div>
+    </div>
+  </div>
+  <nav
+    className="navBar"
+  />
+</div>
+`;

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddThread component renders AddThread by default 1`] = `
+<form
+  className="Thread"
+  onSubmit={[Function]}
+>
+  <div
+    className="addThread"
+  >
+    <div
+      className="addTitle"
+    >
+      <Textarea
+        aria-label="Thread Title..."
+        cols="30"
+        id="title"
+        name="title"
+        placeholder="Thread Title.."
+        required={true}
+        rows="2"
+      />
+    </div>
+    <div
+      className="addContent"
+    >
+      <Textarea
+        aria-label="Type your thread..."
+        cols="30"
+        id="content"
+        name="content"
+        placeholder="Type your thread.."
+        required={true}
+        rows="4"
+      />
+    </div>
+  </div>
+  <Button
+    className="postThreadBtn"
+    type="submit"
+  >
+    Post Thread
+  </Button>
+</form>
+`;
+
+exports[`AddThread component renders the UI for AddThread as expected 1`] = `
+<form
+  className="Thread"
+  onSubmit={[Function]}
+>
+  <div
+    className="addThread"
+  >
+    <div
+      className="addTitle"
+    >
+      <textarea
+        aria-label="Thread Title..."
+        className="Textarea "
+        cols="30"
+        id="title"
+        name="title"
+        placeholder="Thread Title.."
+        required={true}
+        rows="2"
+      />
+    </div>
+    <div
+      className="addContent"
+    >
+      <textarea
+        aria-label="Type your thread..."
+        className="Textarea "
+        cols="30"
+        id="content"
+        name="content"
+        placeholder="Type your thread.."
+        required={true}
+        rows="4"
+      />
+    </div>
+  </div>
+  <button
+    className="Button postThreadBtn"
+    type="submit"
+  >
+    Post Thread
+  </button>
+</form>
+`;

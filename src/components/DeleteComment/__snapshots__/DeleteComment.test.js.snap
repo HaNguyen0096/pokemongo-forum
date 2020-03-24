@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteComment component renders DeleteComment by default 1`] = `
+<div
+  className="Delete_Comment"
+>
+  <button
+    className="Delete_Button"
+    onClick={[Function]}
+    type="button"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon="trash-alt"
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      swapOpacity={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+     
+    remove
+  </button>
+</div>
+`;
+
+exports[`DeleteComment component renders the UI for DeleteComment as expected 1`] = `
+<div
+  className="Delete_Comment"
+>
+  <button
+    className="Delete_Button"
+    onClick={[Function]}
+    type="button"
+  >
+     
+    remove
+  </button>
+</div>
+`;

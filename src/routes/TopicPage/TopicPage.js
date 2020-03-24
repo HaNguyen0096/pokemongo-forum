@@ -46,6 +46,10 @@ export default class TopicPage extends Component {
       )
   }
 
+  goBack = () => {
+    this.props.history.goBack();
+  }
+
   render() {
     const {topic} = this.context
     return (
@@ -63,6 +67,7 @@ export default class TopicPage extends Component {
           <div className='addThread'> Add New Thread</div>
           <AddThread />
         </Section>
+        <button className='backBtn' onClick={this.goBack}>Back</button>
       </div>
     );
   }

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentList Component renders CommentList by default 1`] = `
+<div
+  className="commentList"
+>
+  <div
+    className="commentContent"
+  >
+    <h5 />
+  </div>
+  <div
+    className="commentTime"
+  >
+    March 24th 2020, 7:07:10 pm
+  </div>
+  <div
+    className="dltComment"
+  >
+    <DeleteThread
+      comment={
+        Array [
+          Object {
+            "content": "test 1",
+            "id": 1,
+            "modified": "2020-02-22T21:28:32.615Z",
+            "thread_id": 1,
+            "user_id": 1,
+          },
+        ]
+      }
+      onDeleteThread={[Function]}
+    />
+  </div>
+  <hr
+    className="cmthr"
+  />
+</div>
+`;
+
+exports[`CommentList Component renders the UI for CommentList as expected 1`] = `
+<div
+  className="commentList"
+>
+  <div
+    className="commentContent"
+  >
+    <h5 />
+  </div>
+  <div
+    className="commentTime"
+  >
+    March 24th 2020, 7:07:10 pm
+  </div>
+  <div
+    className="dltComment"
+  >
+    <div
+      className="Delete_Comment"
+    >
+      <button
+        className="Delete_Button"
+        onClick={[Function]}
+        type="button"
+      >
+         
+        remove
+      </button>
+    </div>
+  </div>
+  <hr
+    className="cmthr"
+  />
+</div>
+`;
+
+exports[`CommentListmponent renders CommentList default 1`] = `
+<div
+  className="commentList"
+>
+  <div
+    className="commentContent"
+  >
+    <h5 />
+  </div>
+  <div
+    className="commentTime"
+  >
+    March 24th 2020, 7:05:46 pm
+  </div>
+  <div
+    className="dltComment"
+  >
+    <DeleteThread
+      comment={
+        Array [
+          Object {
+            "content": "test 1",
+            "id": 1,
+            "modified": "2020-02-22T21:28:32.615Z",
+            "thread_id": 1,
+            "user_id": 1,
+          },
+        ]
+      }
+      onDeleteThread={[Function]}
+    />
+  </div>
+  <hr
+    className="cmthr"
+  />
+</div>
+`;
+
+exports[`CommentListmponent renders the UI for CommentList expected 1`] = `
+<div
+  className="commentList"
+>
+  <div
+    className="commentContent"
+  >
+    <h5 />
+  </div>
+  <div
+    className="commentTime"
+  >
+    March 24th 2020, 7:05:46 pm
+  </div>
+  <div
+    className="dltComment"
+  >
+    <div
+      className="Delete_Comment"
+    >
+      <button
+        className="Delete_Button"
+        onClick={[Function]}
+        type="button"
+      >
+         
+        remove
+      </button>
+    </div>
+  </div>
+  <hr
+    className="cmthr"
+  />
+</div>
+`;

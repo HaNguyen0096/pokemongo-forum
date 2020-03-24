@@ -24,6 +24,21 @@
   margin-bottom: 10px;
 }
 
+.backBtn{
+  background-color: #4CAF50;
+  color: white;
+  display: block;
+  margin: 10px auto 20px auto;
+  border: none;
+  border-radius: 6px;
+  height: 35px;
+  width: 50px;
+}
+
+.backBtn:hover{
+  background-color: #45a049;
+}
+
 
 
 

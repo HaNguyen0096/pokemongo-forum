@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopicList component renders TopicList by default 1`] = `
+<div
+  className="topicNav"
+>
+  <nav
+    role="navigation"
+  >
+    <ul
+      className="topicNav_List"
+    >
+      <div
+        className="topicNameBar"
+      >
+        <Link
+          className="topicNames"
+          to="/topic/undefined"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon="folder"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+           
+        </Link>
+      </div>
+      <p
+        className="topicDescription"
+      />
+      <p
+        className="countThread"
+      >
+        Threads: 
+      </p>
+    </ul>
+  </nav>
+  <hr />
+</div>
+`;
+
+exports[`TopicList component renders the UI for TopicList as expected 1`] = `
+<div
+  className="topicNav"
+>
+  <nav
+    role="navigation"
+  >
+    <ul
+      className="topicNav_List"
+    >
+      <div
+        className="topicNameBar"
+      >
+        <a
+          className="topicNames"
+          href="/topic/undefined"
+          onClick={[Function]}
+        >
+           
+        </a>
+      </div>
+      <p
+        className="topicDescription"
+      />
+      <p
+        className="countThread"
+      >
+        Threads: 
+      </p>
+    </ul>
+  </nav>
+  <hr />
+</div>
+`;

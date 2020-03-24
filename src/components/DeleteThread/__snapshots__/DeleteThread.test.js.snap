@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteThread component renders DeleteThread by default 1`] = `
+<div
+  className="Delete_Thread"
+>
+  <button
+    className="Delete_Button"
+    onClick={[Function]}
+    type="button"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon="trash-alt"
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      swapOpacity={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+     
+    Delete Thread
+  </button>
+</div>
+`;
+
+exports[`DeleteThread component renders the UI for DeleteThread as expected 1`] = `
+<div
+  className="Delete_Thread"
+>
+  <button
+    className="Delete_Button"
+    onClick={[Function]}
+    type="button"
+  >
+     
+    Delete Thread
+  </button>
+</div>
+`;

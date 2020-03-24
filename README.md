@@ -1,38 +1,123 @@
-Pokemon Go Forum
+# Pokemon Go Forum
 
 Live: https://hanguyen-pokemongo-forum.now.sh/
 
-API: https://stark-inlet-33649.herokuapp.com/api
+### API Documentation: 
 
-    Get all topics: GET /topics/
+    Link: https://stark-inlet-33649.herokuapp.com
 
-    Get all threads: GET /threads/
+- ##### GET /api/topics
 
-    Get all comments: GET /comments/
+    Return all topics of the forum
 
-    Get threads by topic: GET /topics/${topicId}/threads/
+###### Example response
 
-    Get a thread by id: GET /threads/${thread_id}
+    [
+        {
+            id: 1,
+            topic_name: 'General',
+            topic_content: 'General discussion about Pokemon Go!.'
+        },
+        {
+            id: 2,
+            topic_name: 'Introduction',
+            topic_content: 'Introduce yourselves here!'
+        }
+    ]
 
-    Get comments by threads id: GET /threads/${threadId}/comments
+- ##### GET /api/threads
 
-    Post a thread: POST /threads/
+    Return all threads of the forum
 
-    Post a comment: POST /comments/
+###### Example response
 
-    Delete a thread: DELETE /threads/${thread_id}/
+    [
+        {
+            id: 1,
+            thread_title: 'events',
+            thread_content: 'When is Valentine event start?',
+            user_id: 1,
+            topic_id: 1,
+            modified: '2020-02-22T21:28:32.615Z'
+        }
+    ]
 
-    Delete a comment: DELETE /comments/${comment_id}/
+- ##### GET /api/comments
 
-    Change a thread content: PATCH /threads/${thread_id}/
+    Return all comments of the forum
 
-    Change a comment content: PATCH /comments/${comment_id}/
+###### Example response
 
-Preview:
-![](Screenshot-PoGoForum.png)
+    [
+        {
+            id: 1,
+            content: 'Hello there!',
+            user_id: 1,
+            thread_id: 1,
+            modified: '2020-02-22T21:28:32.615Z'
+        }
+    ]
 
-This is a Forum for Pokemon Go where users can get all the related infomation. User can also post threads, comments and delete threads, comments.
+- ##### GET /api/topics/${topicId}/threads
 
-Front-end: HTML, CSS, Javascript, React
+    Return all threads with a specific topicId
 
-Back-end: Node.js, Express, PostgresSQL
+- ##### GET /api/threads/${thread_id}
+
+    Return a specific thread by its id
+
+- ##### GET /api/threads/${threadId}/comments
+
+    Return all comments with a specific threadId
+
+- ##### POST /api/threads
+   
+    Post a thread
+
+###### Example request
+
+    {
+        thread_title: 'events',
+        thread_content: 'When is Valentine event start?',
+        user_id: 1,
+        topic_id: 1,
+    }
+
+- ##### POST /api/comments
+   
+    Post a comment
+
+###### Example request
+
+    {
+        content: 'Hello!',
+        user_id: 1,
+        thread_id: 1,
+    }
+
+- ##### DELETE /api/threads/${thread_id}
+
+    Delete a Thread. If no thread could be found by thread_id , the server responds with a status 400.
+
+- ##### DELETE /api/comments/${comment_id}
+
+    Delete a comment. If no comment could be found by comment_id , the server responds with a status 400.
+
+- ##### PATCH /api/threads/${thread_id}
+
+    Change a thread content. If no thread could be found by thread_id , the server responds with a status 400.
+
+- ##### PATCH /api/comments/${thread_id}
+
+    Change a comment content. If no comment could be found by comment_id , the server responds with a status 400.
+
+### Preview:
+![](Screenshot-PoGo-Forum.png)
+
+    This is a Forum for Pokemon Go where users can get all the related infomation. User can also post threads, comments and delete threads, comments.
+
+### Tech Stack
+
+    Front-end: HTML, CSS, Javascript, React
+
+    Back-end: Node.js, Express, PostgresSQL

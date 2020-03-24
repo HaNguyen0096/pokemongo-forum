@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddComment component renders AddComment by default 1`] = `
+<form
+  className="Comment"
+  onSubmit={[Function]}
+>
+  <div
+    className="addComment"
+  >
+    <Textarea
+      aria-label="Type a comment..."
+      cols="30"
+      id="text"
+      name="text"
+      placeholder="Type a comment.."
+      required={true}
+      rows="3"
+    />
+  </div>
+  <Button
+    className="postCommentBtn"
+    type="submit"
+  >
+    Post comment
+  </Button>
+</form>
+`;
+
+exports[`AddComment component renders the UI for AddComment as expected 1`] = `
+<form
+  className="Comment"
+  onSubmit={[Function]}
+>
+  <div
+    className="addComment"
+  >
+    <textarea
+      aria-label="Type a comment..."
+      className="Textarea "
+      cols="30"
+      id="text"
+      name="text"
+      placeholder="Type a comment.."
+      required={true}
+      rows="3"
+    />
+  </div>
+  <button
+    className="Button postCommentBtn"
+    type="submit"
+  >
+    Post comment
+  </button>
+</form>
+`;

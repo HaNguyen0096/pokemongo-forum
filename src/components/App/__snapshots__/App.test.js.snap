@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App by default 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <TopicListProvider>
+    <TopicProvider>
+      <ThreadProvider>
+        <App />
+      </ThreadProvider>
+    </TopicProvider>
+  </TopicListProvider>
+</Router>
+`;
+
+exports[`App component renders the UI for App as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App__header"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="headerTop"
+      >
+        <img
+          alt="Pokemon GO forum"
+          className="banner"
+          src="go-banner.png"
+        />
+        <div
+          className="loginNav"
+        >
+          <div
+            className="title"
+          >
+            Pokemon GO Forum
+          </div>
+        </div>
+      </div>
+      <nav
+        className="navBar"
+      />
+    </div>
+  </header>
+  <main
+    className="App__main"
+  >
+    <div
+      className="MainPage"
+    >
+      <section
+        className="Section"
+      >
+        <div
+          className="Welcome_Message"
+        >
+          <p>
+            Welcome to the forum, feel free to ask any question!
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`TopicList component renders CommentList by default 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <TopicListProvider>
+    <TopicProvider>
+      <ThreadProvider>
+        <App />
+      </ThreadProvider>
+    </TopicProvider>
+  </TopicListProvider>
+</Router>
+`;
+
+exports[`TopicList component renders the UI for CommentList as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App__header"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="headerTop"
+      >
+        <img
+          alt="Pokemon GO forum"
+          className="banner"
+          src="go-banner.png"
+        />
+        <div
+          className="loginNav"
+        >
+          <div
+            className="title"
+          >
+            Pokemon GO Forum
+          </div>
+        </div>
+      </div>
+      <nav
+        className="navBar"
+      />
+    </div>
+  </header>
+  <main
+    className="App__main"
+  >
+    <div
+      className="MainPage"
+    >
+      <section
+        className="Section"
+      >
+        <div
+          className="Welcome_Message"
+        >
+          <p>
+            Welcome to the forum, feel free to ask any question!
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+`;
