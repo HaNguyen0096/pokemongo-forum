@@ -1,10 +1,10 @@
 import config from '../config'
+import TokenService from '../services/token-service'
 
 const ApiService = {
 
   getTopics() {
     return fetch(`${config.API_ENDPOINT}/topics`, {
-      // mode: 'no-cors',
       headers: {
       },
       
@@ -93,7 +93,8 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         thread_id: threadId,
@@ -111,7 +112,8 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         topic_id: topicId,
@@ -130,7 +132,8 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/threads/${threadId}`, {
       method: 'PATCH',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         thread_title: title,

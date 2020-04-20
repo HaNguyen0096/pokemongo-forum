@@ -1,30 +1,57 @@
 import React, { Component } from 'react'
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
 import { Button, Input } from '../Utils/Utils'
 import './LoginForm.css'
 
-export default class LoginForm extends Component{
+export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
 
-  state = { error: null }
+  state = { error: null}
 
-  handleSubmitBasicAuth = e => {
-    e.preventDefault()
-    const { user_name, password } = e.target
-    
-    console.log('login form submitted')
-    console.log({ user_name, password })
-    
+  handleSubmitBasicAuth = ev => {
+    ev.preventDefault()
+    const { user_name, password } = ev.target
+    console.log(user_name)
+    TokenService.saveAuthToken(
+      TokenService.makeBasicAuthToken(user_name.value, password.value)
+    )
+
     user_name.value = ''
     password.value = ''
     this.props.onLoginSuccess()
   }
 
-  render(){
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault()
+    this.setState({ error: null })
+    const { user_name, password } = ev.target
+    
+    AuthApiService.postLogin({
+      user_name: user_name.value,
+      password: password.value,
+    })
+      .then(res => {
+        user_name.value = ''
+        password.value = ''
+        TokenService.saveAuthToken(res.authToken)
+        this.props.onLoginSuccess()
+        window.location.reload()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
+
+  render() {
     const { error } = this.state
     return (
-      <form className='loginForm' onSubmit={this.handleSubmitBasicAuth}>
+      <form
+        className='loginForm'
+        onSubmit={this.handleSubmitJwtAuth}
+      >
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
@@ -34,8 +61,8 @@ export default class LoginForm extends Component{
           </label>
           <Input
             required
+            type = 'text'
             name='user_name'
-            type='text'
             id='LoginForm__user_name'>
           </Input>
         </div>
@@ -50,7 +77,7 @@ export default class LoginForm extends Component{
             id='LoginForm__password'>
           </Input>
         </div>
-        <Button type='submit' className='loginbtn'>
+        <Button type='submit'>
           Login
         </Button>
       </form>

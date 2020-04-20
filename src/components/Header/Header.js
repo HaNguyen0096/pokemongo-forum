@@ -6,6 +6,8 @@ import './Header.css'
 
 export default class Header extends Component{
   handleLogoutClick = () => {
+    TokenService.clearAuthToken()
+    // window.location.reload()
   }
 
   renderLogoutLink() {
@@ -36,6 +38,16 @@ export default class Header extends Component{
     )
   }
 
+  renderHome(){
+    return(
+      <div className='homeNav'>
+        <Link className='home-nav' to='/'>
+          Home
+        </Link>
+      </div>
+    )
+  }
+
   render(){
     
     return (
@@ -44,11 +56,12 @@ export default class Header extends Component{
           <img src={banner} className="banner" alt="Pokemon GO forum" />
           <div className="loginNav">
             <div className="title">Pokemon GO Forum</div>
-            {/* <div className='login-button'>
+            <div>{this.renderHome()}</div>
+            <div className='login-button'>
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
-            </div> */}
+            </div>
           </div>
         </div>
         <nav className='navBar'>
