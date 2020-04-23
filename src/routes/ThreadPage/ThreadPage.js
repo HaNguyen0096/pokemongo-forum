@@ -5,6 +5,7 @@ import {Section} from '../../components/Utils/Utils'
 import CommentList from '../../components/CommentList/CommentList'
 import AddComment from '../../components/AddComment/AddComment'
 import DeleteThread from '../../components/DeleteThread/DeleteThread'
+import TokenService from '../../services/token-service'
 import './ThreadPage.css'
 
 
@@ -45,6 +46,7 @@ export default class TopicPage extends Component {
 
   render() {
     const { thread } = this.context
+    console.log(this.context)
     return (
       <div className='Thread_Page'>
         <Section className='thread_detail'>
@@ -57,7 +59,9 @@ export default class TopicPage extends Component {
             </div>
           </div>
           <div className='dltbtn'>
-            <DeleteThread thread={thread}/>
+            {TokenService.hasAuthToken()
+              ? <DeleteThread thread={thread}/>
+              : null}
           </div>
         </Section>
         <Section>

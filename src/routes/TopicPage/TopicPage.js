@@ -4,7 +4,6 @@ import ApiService from '../../services/api-service'
 import {Section} from '../../components/Utils/Utils'
 import ThreadListMain from '../../components/ThreadListMain/ThreadListMain'
 import AddThread from '../../components/AddThread/AddThread'
-import {countCommentsForThread} from '../../components/Utils/Utils'
 import './TopicPage.css'
 
 export default class TopicPage extends Component {
@@ -27,21 +26,18 @@ export default class TopicPage extends Component {
     ApiService.getThreads(topicId)
       .then(this.context.setThreads)
       .catch(this.context.setError)
-
-    ApiService.getComment()
-       .then(this.context.setComments)
-       .catch(this.context.setError)
   }
 
 
   renderThreadList(){
-    const { topic , threads = [], comments = [] } = this.context
+    const { topic , threads = [] } = this.context
+    console.log(this.context)
     return threads.map(thread =>
       <ThreadListMain 
         key = {thread.id}
         thread = {thread}
         topic = {topic} 
-        countComments =  {countCommentsForThread(comments, thread.id )}
+        countComments =  {thread.number_of_comments}
       />
       )
   }

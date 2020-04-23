@@ -2,6 +2,7 @@ import React from 'react'
 import ThreadContext from '../../contexts/ThreadContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import config from '../../config'
+import TokenService from '../../services/token-service'
 
 export default class DeleteThread extends React.Component {
   static defaultProps ={
@@ -17,7 +18,8 @@ export default class DeleteThread extends React.Component {
     fetch(`${config.API_ENDPOINT}/comments/${commentId}`, {
       method: 'DELETE',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res => {

@@ -112,7 +112,7 @@ Live: https://hanguyen-pokemongo-forum.now.sh/
     Change a comment content. If no comment could be found by comment_id , the server responds with a status 400.
 
 ### Preview:
-![](Screenshot-PoGo-Forum.png)
+![](Screenshot-PoGoForum.png)
 
     This is a Forum for Pokemon Go where users can get all the related infomation. User can also post threads, comments and delete threads, comments.
 

@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 const TopicContext = React.createContext({
   topic: null,
   threads: [],
-  comments: [],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -11,7 +10,6 @@ const TopicContext = React.createContext({
   clearTopic: () => {},
   setThreads: () => {},
   addThread: () => {},
-  setComments: () => {},
 })
 
 export default TopicContext
@@ -40,10 +38,6 @@ export class TopicProvider extends Component {
     this.setState({ threads })
   }
 
-  setComments = comments => {
-    this.setState({comments})
-  }
-
   clearTopic = () => {
     this.setTopic(null)
     this.setThreads([])
@@ -60,7 +54,6 @@ export class TopicProvider extends Component {
     const value = {
       topic: this.state.topic,
       threads: this.state.threads,
-      comments: this.state.comments,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
@@ -68,7 +61,6 @@ export class TopicProvider extends Component {
       setThreads: this.setThreads,
       clearTopic: this.clearTopic,
       addThread: this.addThread,
-      setComments: this.setComments,
     }
     return (
       <TopicContext.Provider value={value}>

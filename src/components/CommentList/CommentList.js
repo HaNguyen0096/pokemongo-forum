@@ -1,6 +1,7 @@
 import React, { Component} from 'react'
 import DeleteComment from '../DeleteComment/DeleteComment'
 import  moment  from 'moment-timezone'
+import TokenService from '../../services/token-service'
 import './CommentList.css'
 
 export default class CommentList extends Component{
@@ -11,7 +12,11 @@ export default class CommentList extends Component{
       <div className='commentList'>
         <div className='commentContent'><h5>{comment.content}</h5></div>
         <div className='commentTime'>{time}</div>
-        <div className='dltComment'><DeleteComment comment = {comment}/></div>
+        <div className='dltComment'>
+          {TokenService.hasAuthToken()
+              ? <DeleteComment comment = {comment}/>
+              : null}
+        </div>
         <hr className='cmthr'/>
       </div>      
     )

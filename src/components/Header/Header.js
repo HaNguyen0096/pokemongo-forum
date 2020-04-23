@@ -7,7 +7,7 @@ import './Header.css'
 export default class Header extends Component{
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
-    // window.location.reload()
+    window.location.reload()
   }
 
   renderLogoutLink() {

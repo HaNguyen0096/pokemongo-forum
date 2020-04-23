@@ -41,12 +41,13 @@ export default class LoginForm extends Component {
         window.location.reload()
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ error: res.error})
       })
   }
 
   render() {
     const { error } = this.state
+    console.log(this.state)
     return (
       <form
         className='loginForm'
