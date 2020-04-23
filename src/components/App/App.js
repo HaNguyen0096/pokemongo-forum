@@ -7,16 +7,12 @@ import ThreadPage from '../../routes/ThreadPage/ThreadPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-
-//import Footer from '../Footer/Footer';
+import Head from '../tes/tes'
 import './App.css'
 
 
 class App extends Component {
-
-  state = { 
-    hasError: false 
-  }
+  state = { hasError: false }
 
   static getDerivedStateFromError(error) {
     console.error(error)
@@ -24,14 +20,13 @@ class App extends Component {
   }
 
   render() {
-    return(
-      < >
-        <div className='App'>
-        <header className='App__header'>
+    return (
+      <div className='App'>
+        <main className='App__main'>
+          {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+          <header className='App__header'>
           <Header />
         </header>
-        <main className='App__main'>
-        {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
             <Route 
               exact
@@ -39,12 +34,11 @@ class App extends Component {
               component={MainPage}
             />
             <Route
-              exact
               path={'/login'}
               component={LoginPage}
             />
             <Route
-              exact
+              
               path={'/register'}
               component={RegistrationPage}
             />
@@ -62,8 +56,7 @@ class App extends Component {
             />
           </Switch>
         </main>        
-      </div>
-      </>     
+      </div>    
     )
   }
 }

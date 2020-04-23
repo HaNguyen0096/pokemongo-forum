@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 const TopicListContext = React.createContext({
   topicList: [],
+  user: null,
   error: null,
+  setUser: () => {},
   setError: () => {},
   clearError: () => {},
   setTopicList: () => {},
@@ -12,9 +14,14 @@ export default TopicListContext
 
 export class TopicListProvider extends Component {
   state = {
+    user: null,
     topicList: [],
     error: null,
   };
+
+  setUser = user => {
+    this.setState({user})
+  }
 
   setTopicList = topicList => {
     this.setState({topicList})
@@ -32,7 +39,9 @@ export class TopicListProvider extends Component {
   render() {
     const value = {
       topicList: this.state.topicList,
+      user: this.state.user,
       error: this.state.error,
+      setUser: this.setUser,
       setError: this.setError,
       clearError: this.clearError,
       setTopicList: this.setTopicList,

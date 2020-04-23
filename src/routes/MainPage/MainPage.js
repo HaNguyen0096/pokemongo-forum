@@ -33,8 +33,8 @@ export default class MainPage extends Component{
     const {error} = this.context
     console.log(this.context)
     return (
-      <div className='MainPage'>
-      <Section>
+      // <div className='MainPage'>
+      <Section className='MainPage'>
         <div className='Welcome_Message'> 
         <p>Welcome to the forum, feel free to ask any question!</p>
         </div>
@@ -42,7 +42,7 @@ export default class MainPage extends Component{
           ? <p className='red'>There was an error, try again</p>
           : this.renderTopicsNav()}
       </Section>      
-      </div>
+      // </div>
     )
   }
 }
