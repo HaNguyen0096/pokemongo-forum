@@ -7,7 +7,6 @@ import ThreadPage from '../../routes/ThreadPage/ThreadPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-import Head from '../tes/tes'
 import './App.css'
 
 

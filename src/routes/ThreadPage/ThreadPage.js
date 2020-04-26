@@ -46,7 +46,6 @@ export default class TopicPage extends Component {
 
   render() {
     const { thread } = this.context
-    console.log(this.context)
     return (
       <div className='Thread_Page'>
         <Section className='thread_detail'>

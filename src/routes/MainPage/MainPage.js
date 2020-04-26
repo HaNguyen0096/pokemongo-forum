@@ -31,12 +31,11 @@ export default class MainPage extends Component{
 
   render(){
     const {error} = this.context
-    console.log(this.context)
     return (
       // <div className='MainPage'>
       <Section className='MainPage'>
         <div className='Welcome_Message'> 
-        <p>Welcome to the forum, feel free to ask any question!</p>
+          <p>Welcome to the forum, feel free to ask any question!</p>
         </div>
         {error
           ? <p className='red'>There was an error, try again</p>

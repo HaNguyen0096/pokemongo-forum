@@ -18,7 +18,6 @@ export default class LoginPage extends Component {
   }
 
   render() {
-    console.log('loginpage')
     return (
       <Section className='LoginPage'>
         <h2 className='log'>Login</h2>

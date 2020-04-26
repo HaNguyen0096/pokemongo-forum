@@ -7,7 +7,7 @@ import './Header.css'
 export default class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
-    // window.location.reload()
+    window.location.reload()
   }
 
   renderLogoutLink() {
@@ -50,7 +50,6 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log('header is running')
     return <>
       <nav className='header'>
         <div className='headerTop'>
@@ -59,7 +58,6 @@ export default class Header extends Component {
             <div className="title">Pokemon GO Forum</div>
             <div>{this.renderHome()}</div>
             <div className='login-button'>
-              {console.log(TokenService.hasAuthToken())}
             {TokenService.hasAuthToken()
               ? this.renderLogoutLink()
               : this.renderLoginLink()}

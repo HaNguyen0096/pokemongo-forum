@@ -31,7 +31,6 @@ export default class TopicPage extends Component {
 
   renderThreadList(){
     const { topic , threads = [] } = this.context
-    console.log(this.context)
     return threads.map(thread =>
       <ThreadListMain 
         key = {thread.id}

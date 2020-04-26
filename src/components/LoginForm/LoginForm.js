@@ -3,11 +3,9 @@ import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import { Button, Input } from '../Utils/Utils'
 import './LoginForm.css'
-import TopicListContext from '../../contexts/TopicListContext'
 
 export default class LoginForm extends Component {
 
-  static contextType = TopicListContext
 
   static defaultProps = {
     onLoginSuccess: () => {}
@@ -18,7 +16,6 @@ export default class LoginForm extends Component {
   handleSubmitBasicAuth = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
-    // console.log(user_name)
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(user_name.value, password.value)
     )
@@ -41,9 +38,10 @@ export default class LoginForm extends Component {
         user_name.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        this.context.setUser(res.username)
+        console.log(res.username)
+        this.setState({username: res.username})
         this.props.onLoginSuccess()
-        // window.location.reload()
+        window.location.reload()
       })
       .catch(res => {
         this.setState({ error: res.error})
